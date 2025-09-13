@@ -1,1 +1,187 @@
-/* Add your CSS here */
+/* Corporate gradient background for the whole page */
+body {
+  background: linear-gradient(135deg, #e3f0fc 0%, #ffffff 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero section with gradient and subtle shadow */
+.hero {
+  background: linear-gradient(90deg, #1565c0 0%, #42a5f5 100%);
+  color: white;
+  padding: 48px 0 36px 0;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(21, 101, 192, 0.08);
+  position: relative;
+  transition: box-shadow 0.3s;
+}
+
+/* Hero hover effect for desktop */
+.hero:hover {
+  box-shadow: 0 6px 24px rgba(21, 101, 192, 0.18);
+}
+
+/* Logo styling */
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+/* Logo hover effect */
+.hero:hover .logo {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+/* Main heading */
+.hero h1 {
+  font-size: 2.5em;
+  margin: 10px 0;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+/* Subheading */
+.hero p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  opacity: 0.95;
+}
+
+/* Timeline section: horizontal scroll for desktop */
+.timeline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: flex-start;
+  gap: 32px;
+  padding: 48px 24px;
+  scrollbar-width: thin;
+  /* Hide default scrollbar for a cleaner look */
+  -ms-overflow-style: none;
+  scrollbar-color: #1565c0 #e3f0fc;
+}
+.timeline::-webkit-scrollbar {
+  height: 8px;
+  background: #e3f0fc;
+}
+.timeline::-webkit-scrollbar-thumb {
+  background: #1565c0;
+  border-radius: 4px;
+}
+
+/* Timeline card styling */
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(21, 101, 192, 0.08);
+  width: 300px;
+  min-width: 300px;
+  padding: 24px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.3s;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Card hover effect: pop and highlight */
+.card:hover {
+  box-shadow: 0 8px 32px rgba(21, 101, 192, 0.18);
+  transform: translateY(-8px) scale(1.04);
+  border: 1.5px solid #42a5f5;
+}
+
+/* Card image styling */
+.card-img {
+  width: 100%;
+  max-width: 260px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #e3f0fc;
+  transition: box-shadow 0.3s;
+}
+
+/* Card headings */
+.card h2 {
+  color: #1565c0;
+  font-size: 1.5em;
+  margin: 8px 0 4px 0;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.card h3 {
+  color: #42a5f5;
+  font-size: 1.1em;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+}
+
+/* Card text: hidden by default, appears on hover (desktop) */
+.card-text {
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.4s, max-height 0.4s;
+  pointer-events: none;
+}
+
+/* Show card text on hover (desktop) */
+.card:hover .card-text {
+  opacity: 1;
+  max-height: 200px;
+  pointer-events: auto;
+}
+
+/* Card paragraph */
+.card-text p {
+  font-size: 1em;
+  color: #333;
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+
+/* Timeline note at the bottom */
+.timeline-note {
+  text-align: center;
+  color: #1565c0;
+  font-size: 1em;
+  margin: 30px 0 20px 0;
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 700px) {
+  /* Stack cards vertically on small screens */
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 5px;
+    overflow-x: visible;
+  }
+  .card {
+    width: 95%;
+    max-width: 350px;
+    min-width: unset;
+    margin-bottom: 16px;
+  }
+  /* Always show card text on mobile for accessibility */
+  .card-text {
+    opacity: 1;
+    max-height: 200px;
+    pointer-events: auto;
+    transition: none;
+  }
+  .hero h1 {
+    font-size: 2em;
+  }
+}
+
+/* End of CSS */

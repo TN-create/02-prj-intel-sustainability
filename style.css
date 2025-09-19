@@ -6,6 +6,14 @@ body {
   padding: 0;
 }
 
+/* Only enable RTL direction if the language is Arabic */
+html[lang="ar"] body,
+html[lang="ar"] .hero,
+html[lang="ar"] .timeline,
+html[lang="ar"] .card {
+  direction: rtl;
+}
+
 /* Hero section with gradient and subtle shadow */
 .hero {
   background: linear-gradient(90deg, #1565c0 0%, #42a5f5 100%);
@@ -90,11 +98,11 @@ body {
   overflow: hidden;
 }
 
-/* Card hover effect: pop and highlight */
+/* Card hover effect: pop and highlight (no border added to prevent jitter) */
 .card:hover {
-  box-shadow: 0 8px 32px rgba(21, 101, 192, 0.18);
+  box-shadow: 0 8px 32px rgba(66, 165, 245, 0.25); /* Slightly more blue shadow */
   transform: translateY(-8px) scale(1.04);
-  border: 1.5px solid #42a5f5;
+  /* border removed to prevent layout shift */
 }
 
 /* Card image styling */
@@ -154,6 +162,65 @@ body {
   color: #1565c0;
   font-size: 1em;
   margin: 30px 0 20px 0;
+}
+
+/* Style for Learn More links in columns */
+.learn-more-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 18px;
+  background: #1565c0;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.learn-more-link:hover {
+  background: #42a5f5;
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Add spacing below the three-column section */
+.container {
+  margin-bottom: 40px;
+}
+
+/* Footer styles */
+footer {
+  border-top: 1px solid #e3f0fc;
+  background: #f8f9fa;
+}
+
+footer nav a {
+  color: #003366;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+footer nav a:hover,
+footer nav a:focus {
+  color: #42a5f5;
+  text-decoration: underline;
+  outline: 2px solid #1565c0;
+}
+
+/* High contrast button for accessibility */
+.btn-high-contrast {
+  background-color: #003366 !important; /* Very dark blue for strong contrast */
+  color: #fff !important;
+  border: none;
+  font-weight: bold;
+  outline: 2px solid #1565c0;
+}
+
+.btn-high-contrast:focus,
+.btn-high-contrast:hover {
+  background-color: #0055a5 !important;
+  color: #fff !important;
+  outline: 2px solid #42a5f5;
 }
 
 /* Responsive design for mobile screens */
